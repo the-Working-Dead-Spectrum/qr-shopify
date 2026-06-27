@@ -127,6 +127,29 @@ return [
             'path' => storage_path('logs/laravel.log'),
         ],
 
+        // -------------------------------------------------------------------------
+        // Canal dédié Shopify — écrit dans storage/logs/shopify.log
+        // Permet l'isolation des logs Shopify pour :
+        //  - alertes Sentry/Datadog ciblées
+        //  - rétention différenciée (90j pour shopify vs 14j pour laravel)
+        //  - rotation facilitée
+        // -------------------------------------------------------------------------
+        'shopify' => [
+            'driver' => 'daily',
+            'path'   => storage_path('logs/shopify.log'),
+            'level'  => env('SHOPIFY_LOG_LEVEL', 'debug'),
+            'days'   => env('SHOPIFY_LOG_DAYS', 90),
+            'replace_placeholders' => true,
+        ],
+
+        // Canal stack Shopify : redirige aussi vers le canal principal Laravel
+        // (utile en dev pour tout voir dans laravel.log).
+        'shopify_debug' => [
+            'driver' => 'stack',
+            'channels' => ['shopify', 'single'],
+            'ignore_exceptions' => false,
+        ],
+
     ],
 
 ];

@@ -1,0 +1,63 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "declare_strict_types": true,
+        "ordered_imports": {
+            "sort_algorithm": "alpha",
+            "imports_order": ["class", "function", "const"]
+        },
+        "global_namespace_import": {
+            "import_classes": true,
+            "import_constants": true,
+            "import_functions": true
+        },
+        "no_unused_imports": true,
+        "blank_line_before_statement": {
+            "statements": ["return", "throw", "if", "foreach", "for", "while", "try"]
+        },
+        "ordered_class_elements": {
+            "order": [
+                "use_trait",
+                "case",
+                "constant",
+                "property_public",
+                "property_protected",
+                "property_private",
+                "method_public_static",
+                "method_public",
+                "method_protected_static",
+                "method_protected",
+                "method_private_static",
+                "method_private"
+            ],
+            "sort_algorithm": "none"
+        },
+        "single_quote": true,
+        "trailing_comma_in_multiline": {
+            "elements": ["arrays", "arguments", "parameters"]
+        },
+        "array_syntax": {
+            "syntax": "short"
+        },
+        "no_trailing_whitespace": true,
+        "void_return": true,
+        "nullable_type_declaration_for_default_null_value": true,
+        "simplified_null_return": false
+    },
+    "exclude": [
+        "vendor",
+        "node_modules",
+        "public",
+        "storage",
+        "bootstrap/cache",
+        "docs",
+        "database",
+        "config",
+        "routes",
+        "bootstrap"
+    ],
+    "notPath": [
+        "tests/TestCase.php"
+    ],
+    "test": false
+}

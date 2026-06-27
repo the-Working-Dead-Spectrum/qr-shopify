@@ -34,7 +34,6 @@
     30 => 'SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider',
     31 => 'App\\Providers\\AppServiceProvider',
     32 => 'App\\Providers\\DomainServiceProvider',
-    33 => 'App\\Providers\\ShopifyServiceProvider',
   ),
   'eager' => 
   array (
@@ -57,7 +56,6 @@
     16 => 'SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider',
     17 => 'App\\Providers\\AppServiceProvider',
     18 => 'App\\Providers\\DomainServiceProvider',
-    19 => 'App\\Providers\\ShopifyServiceProvider',
   ),
   'deferred' => 
   array (
